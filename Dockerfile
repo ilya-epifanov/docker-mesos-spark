@@ -1,4 +1,4 @@
-FROM smartislav/mesos-slave-java8:0.22.1-1.0.ubuntu1404
+FROM smartislav/mesos-slave-java8:0.23.0-1.0.ubuntu1404
 
 ADD spark-1.4.1-bin-hadoop2.6.tgz.sha /tmp/spark-1.4.1-bin-hadoop2.6.tgz.sha
 RUN mkdir /spark
