@@ -13,4 +13,4 @@ RUN apt-get update \
 EXPOSE 4040
 VOLUME /spark/conf
 
-ENTRYPOINT ["/spark/bin/spark-submit"]
+ENV PATH=/spark/bin:/bin:/usr/bin
