@@ -14,3 +14,5 @@ EXPOSE 4040
 VOLUME /spark/conf
 
 ENV PATH=/spark/bin:/bin:/usr/bin
+
+ENTRYPOINT []
