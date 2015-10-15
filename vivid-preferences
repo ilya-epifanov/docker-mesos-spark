@@ -1,0 +1,4 @@
+Package: *
+Pin: release a=vivid
+Pin-Priority: 400
+
