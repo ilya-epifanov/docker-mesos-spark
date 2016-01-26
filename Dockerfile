@@ -8,14 +8,13 @@ RUN mkdir /spark
 RUN apt-get update \
  && apt-get install --no-install-recommends -y curl openjdk-8-jre-headless \
  && apt-get install -y libatlas3-base libopenblas-base \
- && update-alternatives --config libblas.so \
- && update-alternatives --config libblas.so.3 \
- && update-alternatives --config liblapack.so \
- && update-alternatives --config liblapack.so.3 \
  && curl -sL http://d3kbcqa49mib13.cloudfront.net/spark-1.6.0-bin-hadoop2.6.tgz -o /tmp/spark-1.6.0-bin-hadoop2.6.tgz \
  && (cd /tmp; sha512sum -c spark-1.6.0-bin-hadoop2.6.tgz.sha) \
  && tar -zx -C /spark --strip-components=1 -f /tmp/spark-1.6.0-bin-hadoop2.6.tgz \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN update-alternatives --auto libblas.so.3 \
+ && update-alternatives --auto liblapack.so.3 
 
 EXPOSE 4040
 VOLUME /spark/conf
